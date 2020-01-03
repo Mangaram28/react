@@ -1,0 +1,23 @@
+
+.card:first-child{
+    margin-right:30px !important;
+}
+
+.card:nth-child(2n+3) {
+    margin-right:30px !important;
+}
+
+.fp_img{
+    height: 160px;
+
+    img[src=""] {
+        display: none;
+    }
+}
+
+.gridImg{
+    height: 81%;
+    position: absolute;
+    width: 93px;
+    background:transparent;
+}
