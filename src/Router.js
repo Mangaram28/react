@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, BrowserRouter as Router,Switch } from 'react-router-dom';
 
 import Header from '../src/Component/header/header.component';
-import FlatPlan from '../src/Component/flatplan/flatplan.component';
+import FlatPlan from '../src/Component/flatplan-root/flatplan.component';
 
 export default class Routes extends React.Component {
     constructor(props) {
