@@ -1,10 +1,11 @@
 const Userdata = [
-        {"id":"0","fp_type":'',"marker":'folio'},
-      {"id":"1","fp_type":'',"marker":'file'},
+        {"id":"0","fp_type":'',"marker":''},
+      {"id":"1","fp_type":'',"marker":''},
       {"id":"2","fp_type":'',"marker":''},
         {"id":"3","fp_type":'',"marker":''},
         {"id":"4","fp_type":'',"marker":''},
-       {"id":"5","fp_type":'',"marker":'saved'},
+       {"id":"5","fp_type":'',"marker":''},
+     
       
     ];
 

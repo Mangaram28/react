@@ -18,10 +18,6 @@ constructor(props){
 
 }
 
-
- 
-  
-
   handlechange = (e) => {
 
     {console.log(this.state.Users[0].author)}
@@ -35,28 +31,45 @@ constructor(props){
   saveChanges = (e) => {
     
     const {dataset,id} = e.currentTarget;
-    console.log(dataset.id);
-    console.log(id);
+    
+
+    
    
 
     this.setState(prevState => {
       const newItems = [...prevState.Users];
       newItems[dataset.id].fp_type = id;
+
+      const markercheck = (id) ? '' : newItems[dataset.id].marker ='';  
+
       return {Users: newItems};  
     });
 
-    console.log(this.state);
+    
     
   } 
 
 
-  handleEditMarketChange(event) {
-    this.setState({value: event.target.value});
+  handleEditMarketChange(e) {
+    const {value} = e.currentTarget;
+   
+
+    //this.setState({value: e.target.value});
   }
 
   handleEditMarket = (e) => {
-    alert('A name was submitted: ' + e.currentTarget.value);
     e.preventDefault();
+
+    const{value ,name} = e.target[0];
+
+    console.log(name);
+
+    this.setState(prevState => {
+      const newItems = [...prevState.Users];
+      newItems[name].marker = value;
+      return {Users: newItems};  
+    });
+    
   }
 
 
@@ -85,17 +98,17 @@ constructor(props){
                         this.setState({searchField: e.target.value})
                                         }/>*/}  
                                      
-                      <div class="container-fluid">
-                          <div class='row'>
-                                <div class='col-xs-2'>
+                      <div className="container-fluid">
+                          <div className='row'>
+                                <div className='col-xs-2'>
                                       <SearchBox handlechange={this.handlechange}/>
                                 </div>
-                                <div class='col-sm-10'>
-                                      <FlatplanGrid Users={Filteruser} DropdownChange={this.saveChanges} EditMarker={this.handleEditMarket}></FlatplanGrid>
+                                <div className='col-sm-10'>
+                                      <FlatplanGrid Users={Filteruser} DropdownChange={this.saveChanges} EditMarker={this.handleEditMarket} ChangeEditMarker={this.handleEditMarketChange}></FlatplanGrid>
                                 </div>
                          
                           </div>
-                       </div>
+                      </div>
             
             </div> 
             

@@ -19,7 +19,10 @@ const FlatplanGrid = ({Users, ...otherProps}) => {
                                         
                                         
                                             { /*<img className="card-img-top " src='https://i.picsum.photos/id/0/100/200.jpg' alt="Card image" style={{height:'180px',}}/> */ }
+                                            
                                             <div className="fp_img" style={{backgroundColor :(user.fp_type === 'ad') ? '#91E0ED' : (user.fp_type === 'ed') ?  '#C2C2C2'  : '#676767'}}>
+                                                 <small class='markerName'>{user.marker}</small>
+                                            
                                                  <img className="gridImg" src=''/> 
                                             </div>
 
