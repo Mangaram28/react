@@ -5,23 +5,20 @@ import FlatplanGrid from '../flatplan-grid/flatplan-grid.component';
 import Userdata from '../../Userdata';
 
 
+
+
 class FlatPlan extends React.Component{
 constructor(props){
     super(props);
 
-    this.state= {
+    this.state = {
         Users: Userdata,
         searchField:'',
     };
 
-    console.log(props);
-
 }
 
   handlechange = (e) => {
-
-    {console.log(this.state.Users[0].author)}
-    
     const {name,value} = e.target;
     this.setState({
       [name]: value
@@ -32,10 +29,6 @@ constructor(props){
     
     const {dataset,id} = e.currentTarget;
     
-
-    
-   
-
     this.setState(prevState => {
       const newItems = [...prevState.Users];
       newItems[dataset.id].fp_type = id;
@@ -45,14 +38,11 @@ constructor(props){
       return {Users: newItems};  
     });
 
-    
-    
   } 
 
 
   handleEditMarketChange(e) {
     const {value} = e.currentTarget;
-   
 
     //this.setState({value: e.target.value});
   }
@@ -62,14 +52,13 @@ constructor(props){
 
     const{value ,name} = e.target[0];
 
-    console.log(name);
+  
 
     this.setState(prevState => {
       const newItems = [...prevState.Users];
       newItems[name].marker = value;
       return {Users: newItems};  
     });
-    
   }
 
 
@@ -83,7 +72,6 @@ constructor(props){
   }*/
  
     render(){
-   
         const {Users,searchField} = this.state;
         //filter to find state
         const Filteruser = Users.filter(users => 
@@ -92,7 +80,7 @@ constructor(props){
          
 
         return(
-                <div>
+            <div>
                      
                        {/*<input type="search" placeholder="name" onChange={e => 
                         this.setState({searchField: e.target.value})
@@ -109,9 +97,7 @@ constructor(props){
                          
                           </div>
                       </div>
-            
-            </div> 
-            
+            </div>    
         )
     }
 }

@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './flatplan-marker.styles.scss';
 
 
-const FlatplanMarker = ({users , EditMarker, DropdownChange}) => {
-
-
-
+const FlatplanMarker = ({users ,EditMarker ,DropdownChange }) => {
   const {id ,fp_type ,marker} = users;
+
+  const [state, setState] = useState(true);
+
+  function toggle() {
+
+    setTimeout(() => {
+      setState(!state);
+      console.log('okay');
+    }, 2000);
+    
+  }
     
     return(
     
@@ -15,7 +23,8 @@ const FlatplanMarker = ({users , EditMarker, DropdownChange}) => {
 
               <div class="dropdown-menu">
                   <button type="submit" class="dropdown-item" data-toggle="modal" data-target={`#popupCall${id}`} >Edit Marker</button>
-                  <li onClick={DropdownChange} class="dropdown-item" data-id={id} id=''>Delect Page Marker</li>  
+                  <li onClick={DropdownChange} class="dropdown-item" data-id={id} id=''>Delect Page Marker</li>
+                  
               </div>
                
 
@@ -30,7 +39,7 @@ const FlatplanMarker = ({users , EditMarker, DropdownChange}) => {
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
-                              <form onSubmit={EditMarker} >
+                              <form onSubmit={EditMarker}>
                                 <div class="modal-body">
                                     <div class="form-group">
                                       <label htmlFor="recipient-name" class="col-form-label">Name:</label>
@@ -38,7 +47,7 @@ const FlatplanMarker = ({users , EditMarker, DropdownChange}) => {
                                     </div> 
                                 </div>
                                 <div class="modal-footer">
-                                  <button type="submit" class="btn btn-primary" >Ok</button>
+                                  <button type="submit" class="btn btn-primary" onClick={toggle}  >Ok</button>
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                                 </div>
                               </form> 

@@ -7,7 +7,7 @@ const FlatplanDropdown = ({users,DropdownChange}) => {
     return(
     <div className='col-xs-2' style={{marginBottom: '-27px',color:'white'}}>
         <button type="button" class="dropdown-toggle" data-toggle="dropdown">
-    </button>{id}
+        </button>{id}
     
 
     <div class="dropdown-menu">
